@@ -17,10 +17,7 @@ version = "0.0.1"
 
 publishing {
     publications {
-
         create<MavenPublication>("maven") {
-            artifact("javadocTask")
-
             groupId = "cn.llonvne"
             artifactId = "PropertiesCopy"
             version = "0.0.1"
@@ -60,15 +57,15 @@ publishing {
     }
 }
 
-signing {
-    signing {
-        useInMemoryPgpKeys(
-            System.getProperty("GPG_PRIVATE_KEY"),
-            System.getProperty("GPG_PRIVATE_PASSWORD")
-        )
-        sign(publishing.publications)
-    }
-}
+//signing {
+//    signing {
+//        useInMemoryPgpKeys(
+//            System.getProperty("GPG_PRIVATE_KEY"),
+//            System.getProperty("GPG_PRIVATE_PASSWORD")
+//        )
+//        sign(publishing.publications)
+//    }
+//}
 
 allprojects {
     pluginManager.withPlugin("java") {
